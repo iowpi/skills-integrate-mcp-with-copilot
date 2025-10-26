@@ -28,16 +28,27 @@ header h1 {
   margin-bottom: 10px;
 }
 
+
 main {
   display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
 }
 
-@media (min-width: 768px) {
-  main {
-    grid-template-columns: 2fr 1fr;
+/* 横向活动卡片列表 */
+.horizontal-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+@media (max-width: 700px) {
+  .horizontal-list {
+    flex-direction: column;
+    align-items: stretch;
   }
 }
 
@@ -57,12 +68,45 @@ section h3 {
   color: #1a237e;
 }
 
+
 .activity-card {
+  min-width: 270px;
+  max-width: 320px;
   margin-bottom: 15px;
   padding: 15px;
   border: 1px solid #ddd;
   border-radius: 5px;
   background-color: #f9f9f9;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.register-section {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.register-section input[type="email"] {
+  flex: 1 1 0;
+  padding: 7px 8px;
+  font-size: 15px;
+  border: 1px solid #bbb;
+  border-radius: 4px;
+}
+
+.register-section .register-btn {
+  background-color: #43a047;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 7px 12px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.register-section .register-btn:hover {
+  background-color: #388e3c;
 }
 
 .activity-card h4 {
